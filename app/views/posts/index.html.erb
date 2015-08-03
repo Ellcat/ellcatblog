@@ -1,6 +1,6 @@
-<h1>Listing posts</h1>
 
-<table>
+
+<!-- <table>
   <thead>
     <tr>
       <th>Title</th>
@@ -8,22 +8,34 @@
       <th></th>
       <th></th>
       <th></th>
+
     </tr>
-  </thead>
+  </thead> -->
+<div class="container sections-wrapper">
+        <div class="row">
+            <div class="primary col-md-8 col-sm-12 col-xs-12">
+                <section class="about section">
+                    <div class="section-inner">
+                    <% @posts.each do |post| %>
+                        <h2 class="heading"><%= post.title %></h2>
+                        <div class="content">
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <tbody>
+              
+                <tr>
+                  <td><%= post.body %></td>
+                  <td><%= link_to 'Read More', post %></td>
+                  <td><%= link_to 'Edit', edit_post_path(post) %></td>
+                  <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
 
+            </div><!--//content-->
+                    </div><!--//section-inner-->                 
+                </section><!--//section-->
+          
 <br>
 
 <%= link_to 'New Post', new_post_path %>
