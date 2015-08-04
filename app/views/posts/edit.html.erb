@@ -1,6 +1,13 @@
-<h1>Editing post</h1>
-
-<%= render 'form' %>
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <h1>Edit</h1>
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+    
+    <br />
+    <%= f.submit 'Update', :class => 'btn btn-primary' %>
+  <% end %>
+</div>
 
 <%= link_to 'Show', @post %> |
 <%= link_to 'Back', posts_path %>
