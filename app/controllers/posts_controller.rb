@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
- before_filter :authenticate, :except => [ :create, :index, :show, :edit, :update, :destroy ]
+ # before_filter :except => [ :create, :index, :show, :edit, :update, :destroy ]
 
   # before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +32,9 @@ class PostsController < ApplicationController
 
  
   def update
+    @place = Place.find(params[:id])
+  @place.update_attributes(post_params)
+
   end
 
   
