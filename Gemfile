@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.1'
 
 gem "simple_form"
+gem 'devise', '>= 3.2.4'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
